@@ -90,17 +90,20 @@ for vathm in range(7):
     if vathm != 0:
         V[vathm - 1, 2] = V[vathm, 0]
 
-Va = np.zeros((7,3))
-Vu = np.zeros((7,3))
+# Hypothesis: a-angle at position 3_7 is 9 degrees
+a[6, 2] = 9 * pi / 180
+for v_guess in range(100, 200, 5):
+    try:
+        V[6, 2] = newton(lambda v:v_func(v, Tt[6, 2], 
+                                         Pt[6, 2], a[6, 2] , area(6, 2)),
+                          v_guess)
+        break
+    except:
+       pass
 
-# Updating the Va, Vu velocities
-for vathm in range(7):
-    Va[vathm, 0] = V[vathm, 0] * np.cos(a[vathm, 0])
-    Vu[vathm, 0] = V[vathm, 0] * np.sin(a[vathm, 0])
-    if vathm != 0:
-       Va[vathm - 1, 2] = Va[vathm, 0]
-       Vu[vathm -1, 2] = Vu[vathm, 0]
 
+Va = V * np.cos(a)
+Vu = V * np.sin(a)
 
 # Euler 's Theorem for every rotor ==> Vu2(vathm)
 ht = Cp * Tt
@@ -111,7 +114,9 @@ for vathm in range(7):
 for vathm in range(7):
     for v_guess in range(int(Vu[vathm, 1]) + 1, 1300, 5): # V larger than Vu
         try :
-            v_calc1 = newton(lambda v:v_func_2(v, Tt[vathm, 1], Pt[vathm, 1], area(vathm, 1), Vu[vathm, 1]), v_guess)
+            v_calc1 = newton(lambda v:v_func_2(v, Tt[vathm, 1], Pt[vathm, 1], 
+                                               area(vathm, 1), Vu[vathm, 1]), 
+                             v_guess)
             break           
         except RuntimeError as e:
             pass
