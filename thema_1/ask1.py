@@ -2,7 +2,7 @@ from __future__ import division
 from sympy import atan
 import sympy as sm
 import numpy as np
-from scipy.optimize import fsolve
+from scipy.optimize import newton
 import matplotlib.pylab as plt
 from termcolor import cprint
 import sys
@@ -17,7 +17,7 @@ r_range = [13/24., 0.67]
 h_range = (0.9, 0.925, 0.95)
 phi_range =np.arange(0.1, 1, 0.1)
 guess_range = np.arange(0.1, 1, 0.05)
-
+"""
 for r_num in r_range:
     cprint("r = {0}".format(round(r_num, 5)), "red")
     htt_wo_r = htt.subs(r, r_num)
@@ -32,8 +32,10 @@ for r_num in r_range:
                     psi_new =  fsolve(lambda y: num_htt(round(phi_new, 5), y)- h, guess)
                     points.append((round(phi_new, 5), psi_new[0]))
                     break
-                except:
+                except RuntimeError:
                     pass
+                except:
+                    print "Unexpected error:", sys.exc_info()[0]  
         for point in points:
             print "{0} ==> {1}".format(point[0], round(point[1], 3))
-
+"""

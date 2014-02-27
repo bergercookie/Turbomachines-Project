@@ -1,0 +1,12 @@
+"""
+***What i've learned***
+
+for system of (nonlinear) equations:
+fsolve
+root
+newton_krylov
+
+for single equations:
+newton
+
+"""
