@@ -1,4 +1,3 @@
-"""
 ***What i've learned***
 
 for system of (nonlinear) equations:
@@ -9,4 +8,7 @@ newton_krylov
 for single equations:
 newton
 
-"""
+In order to print python-syntaxed code DON'T USE Canopy, lpr command
+Instead use :hardcopy from the vim ex-mode
+
+
