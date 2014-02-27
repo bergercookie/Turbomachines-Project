@@ -1,4 +1,5 @@
 # Ignore certain files
 *~
 *.DS_Store
+*.pyc
 
