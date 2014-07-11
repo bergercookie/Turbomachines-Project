@@ -2,6 +2,14 @@
 
 # Tue Feb 18 14:21:07 EET 2014 nickkouk
 
+"""
+this is a supplementary module to 'Thema_3.py'
+Below the mean radius, head radius and foot radius  of every position is computed 
+and stored in Rm, Rh, Rf arrrays respectively.
+the a-angles are also computed in every entering position of stage 
+and the velocity-iterating and area functions are also defined
+"""
+
 # Initialization
 from __future__ import division
 import numpy as np

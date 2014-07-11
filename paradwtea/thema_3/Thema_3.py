@@ -3,8 +3,9 @@
 # Mon Feb 17 21:42:45 EET 2014 nickkouk
 
 """
-function for computing Pressures and Temperatures in every blade row 
-of the 7-stage compressor
+The purpose of this module is to compute total, static temperatures, pressures, enthalpies
+in every position of every stage, as well as all V, W velocities.
+In the end the  entropy losses and the isentropic, polytropic efficiencies are presented.
 """
 
 # Imports first
@@ -165,6 +166,7 @@ for vathm in range(7):
 a = a * 180 / np.pi
 beta = beta * 180 / np.pi
 
+# Printing everything compured above
 print "\n" + "*" * 30 + "\n"
 print "Angles:\na =\n{0}\nb =\n{1}".format(a, beta) 
 print "\n" + "*" * 30 + "\n"
@@ -178,8 +180,6 @@ print "ht =\n{0}\nh_stat =\n{1}".format(ht, h_stat)
 print "\n" + "*" * 30 + "\n"
 print "Entropy Losses= \n{}".format(DS)
 print "\n" + "*" * 30 + "\n"
-print "Polytropic Process (per stage):\nExponential of process (n) = \n{0}\nPolytropic Process Efficiency =\n{1}".format(polytropic_vathm[:, 0], polytropic_vathm[:, 1]) 
+print "Polytropic Process (per stage):\nExponential of process (n):\n{0}\nPolytropic Process Efficiency:\n{1}".format(polytropic_vathm[:, 0], polytropic_vathm[:, 1]) 
 print "\n" + "*" * 30 + "\n"
 print "Isentropic Process Efficiency (per stage):\n{0}\n".format(isentropic_vathm) 
-
-

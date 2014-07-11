@@ -1,4 +1,3 @@
-
 ******************************
 
 Finding the polytropic exponent of every Rotor:
@@ -154,9 +153,9 @@ Entropy Losses=
 ******************************
 
 Polytropic Process (per stage):
-Exponential of process (n) = 
+Exponential of process (n):
 [ 1.482  1.483  1.484  1.484  1.485  1.485  1.486]
-Polytropic Process Efficiency =
+Polytropic Process Efficiency (per stage):
 [ 0.878  0.877  0.876  0.876  0.875  0.875  0.874]
 
 ******************************

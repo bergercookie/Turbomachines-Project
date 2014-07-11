@@ -2,7 +2,6 @@
 
 # Sun Feb 23 15:59:44 EET 2014, nickkouk
 
-
 # Initializations first
 from exceptions import *
 from sympy import atan
@@ -18,7 +17,8 @@ import sys
 
 
 # Needed values
-ON = 13
+#ON = 13
+ON = 1
 r = ON / 24.
 
 # Symbolic Manipulations
